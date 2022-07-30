@@ -70,7 +70,7 @@ public class Animation extends javax.swing.JFrame implements KeyListener {
                         Dimension newSize = resizePanelToParent();
                         position = getPositionClosestToCurrent(position, size, newSize);
                         size = newSize;
-                        repaintImage(animationStart,position);
+                        repaintImage(animationStart, position);
                     }
                     animationStart = changeSpriteDirection(animationStart);
                     if (!(horizontalDirection == STATIONARY && verticalDirection == STATIONARY)) {
@@ -94,14 +94,15 @@ public class Animation extends javax.swing.JFrame implements KeyListener {
                             }
                             animationPane.removeAll();
                         }
-                    }
 
+                    }
+                    
                 }
             }
-            
-            private Point getPositionClosestToCurrent(Point oldPosition, Dimension oldSize, Dimension newSize){
-                return new Point(newSize.width/oldSize.width * (int)oldPosition.getX(),
-                        newSize.height/oldSize.height * (int)oldPosition.getY());
+
+            private Point getPositionClosestToCurrent(Point oldPosition, Dimension oldSize, Dimension newSize) {
+                return new Point(newSize.width / oldSize.width * (int) oldPosition.getX(),
+                        newSize.height / oldSize.height * (int) oldPosition.getY());
             }
 
             private void repaintImage(int i, Point position) {
